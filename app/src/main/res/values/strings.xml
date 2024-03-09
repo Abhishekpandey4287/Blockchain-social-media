@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Social_Media_Using_Blockchain</string>
+    <string name="search">Search...</string>
+
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="people">People</string>
+        <string name="username">username</string>
+        <string name="_29">29</string>
+        <string name="_30">30</string>
+        <string name="posts">Posts</string>
+        <string name="followers">followers</string>
+        <string name="following">following</string>
+        <string name="edit_profile">Edit profile</string>
+        <string name="share_profile">Share profile</string>
+        <string name="favorite">favorite</string>
+        <string name="token">Token</string>
+        <string name="appreciation">Appreciation</string>
+        <string name="_40">40</string>
+        <string name="_70">70</string>
+        <string name="menu_btn">menu_btn</string>
+        <string name="paid_val">paid_val</string>
+        <string name="lock">Lock</string>
+        <string name="down_arrow">down_arrow</string>
+        <string name="profile_pic">profile_pic</string>
+    <string name="login" />
+    <string name="password" />
+    <string name="home" />
+
+
 </resources>

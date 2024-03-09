@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,19 +17,48 @@
         android:theme="@style/Theme.Social_Media_Using_Blockchain"
         tools:targetApi="31">
         <activity
+            android:name=".NotificationActivity" />
+        <!--<activity
             android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>-->
+        <!--<activity
+            android:name=".ProfileMainActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".SearchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity1" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".SearchActivity" />
+         <!-- Razorpay API key-->
+         <meta-data
+             android:name="com.razorpay.ApiKey"
+             android:value="rzp_test_SGzZ0R9mXF616B"
+             />
 
+
+
+    </application>
 
 </manifest>

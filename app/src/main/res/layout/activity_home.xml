@@ -1,78 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlack"
-    tools:context=".HomeActivity">
+    android:keepScreenOn="true"
+    android:orientation="vertical">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/layout_main"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="-23dp" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        app:tint="@color/colorWhite"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/add" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"/>
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="35dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add"
+        app:tint="@color/colorWhite" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="31dp"
+        android:layout_height="28dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="14dp"
-        app:tint="@color/colorWhite"
-        android:background="@color/colorBlack"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:srcCompat="@drawable/home" />
+        app:srcCompat="@drawable/home"
+        app:tint="@color/colorWhite" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="4dp"
-        app:tint="@color/colorWhite"
+        android:layout_width="33dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="-1dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/search"
+        app:tint="@color/colorWhite" />
+
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="167dp"
+        android:layout_height="157dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search..."
+            app:tint="@color/colorWhite"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/searchResultsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="14dp"
-        app:tint="@color/colorWhite"
+        android:layout_width="35dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        app:tint="@color/colorWhite" />
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="44dp"
-        android:layout_height="46dp"
-        app:tint="@color/colorWhite"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintEnd_toStartOf="@+id/imageView11"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:srcCompat="@drawable/notification" />
-
-
+        app:srcCompat="@drawable/notification"
+        app:tint="@color/colorWhite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
