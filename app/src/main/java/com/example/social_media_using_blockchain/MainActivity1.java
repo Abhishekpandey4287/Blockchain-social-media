@@ -45,11 +45,13 @@ public class MainActivity1 extends AppCompatActivity implements PaymentResultWit
     ViewPager viewPager;
     Button btnEditProfile;
     ImageView token;
+    TextView transactionDetailsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity1_main);
+        transactionDetailsTextView = findViewById(R.id.transactionDetailsTextview);
         token = findViewById(R.id.token);
         Checkout.preload(getApplicationContext());
         Checkout co = new Checkout();
@@ -290,18 +292,22 @@ public class MainActivity1 extends AppCompatActivity implements PaymentResultWit
             options.put("prefill", prefill);
             co.open(this, options);
         } catch (Exception e) {
-            Toast.makeText(this, "Error in payment: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
 
     @Override
     public void onPaymentSuccess(String s, PaymentData paymentData) {
+        String transactionDetails =  s;
+        transactionDetailsTextView.setText(transactionDetails);
         Toast.makeText(this, "Payment successful" , Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPaymentError(int i, String s, PaymentData paymentData) {
+        String transactionDetails =  s;
+        transactionDetailsTextView.setText(transactionDetails);
         Toast.makeText(this, "Error" + s , Toast.LENGTH_SHORT).show();
     }
 }
